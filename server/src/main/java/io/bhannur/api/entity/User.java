@@ -1,10 +1,16 @@
-package io.bhannur.api.entity;
+package main.java.io.bhannur.api.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 @Entity
-public class user {
+@NamedQueries({
+        @NamedQuery(name = "User.findAll", query = "SELECT u FROM User u"),
+        @NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.email=:pEmail")
+})
+public class User {
 
     @Id
     private String userID;

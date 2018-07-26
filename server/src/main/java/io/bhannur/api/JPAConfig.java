@@ -1,4 +1,4 @@
-	package io.bhannur.api;
+	package main.java.io.bhannur.api;
 
     import org.eclipse.persistence.config.PersistenceUnitProperties;
     import java.util.Properties;
@@ -24,7 +24,7 @@
         public LocalContainerEntityManagerFactoryBean createEmf() {
             LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
             emf.setJpaVendorAdapter(new EclipseLinkJpaVendorAdapter());
-            emf.setPackagesToScan("io.bhannur.api.entity");
+            emf.setPackagesToScan("main.java.io.bhannur.api.entity");
             emf.setDataSource(dataSource());
             emf.setJpaProperties(jpaProperties());
             return emf;
@@ -35,6 +35,8 @@
             DriverManagerDataSource ds = new DriverManagerDataSource();
             ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
             ds.setUrl("jdbc:mysql://localhost:3306/movieflix-db?useSSL=false");
+            /*ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
+            ds.setUrl("jdbc:mysql://localhost:3306/example-db?useSSL=false");*/
             ds.setUsername("root");
             ds.setPassword("Denso@963");
             return ds;

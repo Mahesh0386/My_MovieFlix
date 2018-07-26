@@ -1,4 +1,4 @@
-package io.bhannur.api;
+package main.java.io.bhannur.api;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -16,6 +16,6 @@ public class ServletInitializer extends AbstractAnnotationConfigDispatcherServle
 
 	@Override
 	protected String[] getServletMappings() {
-		return new String[] { "/My_MovieFlix/api/*" };
+		return new String[] { "/api/*" };
 	}
 }

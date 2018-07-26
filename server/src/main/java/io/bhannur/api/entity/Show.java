@@ -1,4 +1,4 @@
-package io.bhannur.api.entity;
+package main.java.io.bhannur.api.entity;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -8,8 +8,8 @@ import javax.persistence.Id;
 
 import java.util.Date;
 
-@Entity
-public class show {
+//@Entity
+public class Show {
 
     public String getTitle() {
         return title;
