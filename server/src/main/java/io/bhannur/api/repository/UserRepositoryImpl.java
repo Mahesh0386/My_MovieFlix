@@ -30,9 +30,9 @@ import java.util.List;
             TypedQuery<User> query = em.createNamedQuery("User.findByEmail", User.class);
             query.setParameter("pEmail", email);
 
-            List<User> userloyees = query.getResultList();
-            if (userloyees != null && userloyees.size() == 1) {
-                return userloyees.get(0);
+            List<User> user = query.getResultList();
+            if (user != null && user.size() == 1) {
+                return user.get(0);
             } else {
                 return null;
             }
