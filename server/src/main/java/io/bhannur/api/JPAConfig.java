@@ -34,7 +34,7 @@
         public DataSource dataSource() {
             DriverManagerDataSource ds = new DriverManagerDataSource();
             ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-            ds.setUrl("jdbc:mysql://localhost:3306/movieflix-db?useSSL=false");
+            ds.setUrl("jdbc:mysql://localhost:3306/movieflix-db?allowPublicKeyRetrieval=true&useSSL=false");
             /*ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
             ds.setUrl("jdbc:mysql://localhost:3306/example-db?useSSL=false");*/
             ds.setUsername("root");
