@@ -8,9 +8,9 @@ import java.util.Date;
 
 @Entity
 @NamedQueries({
-        @NamedQuery(name = "Shows.findAll", query = "SELECT s FROM Show s"),
+        @NamedQuery(name = "Shows.findAll", query = "SELECT s FROM Shows s"),
         })
-public class Show {
+public class Shows {
 
     public String getTitle() {
         return title;
