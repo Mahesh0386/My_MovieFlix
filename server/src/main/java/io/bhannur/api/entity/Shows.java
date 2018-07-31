@@ -2,13 +2,14 @@ package main.java.io.bhannur.api.entity;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import java.util.Date;
 
-//@Entity
+@Entity
+@NamedQueries({
+        @NamedQuery(name = "Shows.findAll", query = "SELECT s FROM Show s"),
+        })
 public class Show {
 
     public String getTitle() {
@@ -167,8 +168,6 @@ public class Show {
     private String title;
     private int year;
     private String rated;
-    @DateTimeFormat
-    private Date released;
     private String runtime;
     private String genre;
     private String director;
@@ -185,5 +184,7 @@ public class Show {
     @Id
     private int imdbID;
     private String type;
+    @DateTimeFormat
+    private Date released;
 
 }
