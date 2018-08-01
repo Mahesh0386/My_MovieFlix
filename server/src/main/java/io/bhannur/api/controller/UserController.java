@@ -27,7 +27,7 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.POST)
     public User create(@RequestBody User user) {
-        return service.create(user);
+        return service.createUser(user);
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "{id}")

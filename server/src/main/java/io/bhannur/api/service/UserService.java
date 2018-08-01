@@ -10,7 +10,7 @@ public interface UserService {
 
          User findOne(String id);
 
-         User create(User user);
+         User createUser(User user);
 
          User update(String id, User user);
 

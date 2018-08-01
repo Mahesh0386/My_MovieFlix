@@ -34,22 +34,22 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public User create(User emp) {
-        User existing = repository.findByEmail(emp.getEmail());
+    public User createUser(User user) {
+        User existing = repository.findByEmail(user.getEmail());
         if (existing != null) {
             throw new BadRequestException("User with this email already exists");
         }
-        return repository.create(emp);
+        return repository.create(user);
     }
 
     @Override
     @Transactional
-    public User update(String id, User emp) {
+    public User update(String id, User user) {
         User existing = repository.findOne(id);
         if (existing == null) {
             throw new EntityNotFoundException("User not found");
         }
-        return repository.update(emp);
+        return repository.update(user);
     }
 
     @Override
