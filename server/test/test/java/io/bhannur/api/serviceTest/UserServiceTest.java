@@ -10,15 +10,19 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
+import org.mockito.stubbing.OngoingStubbing;
+
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class UserServiceTest {
+
+    private User user ;
 
     @Mock
     private UserRepositoryImpl userRepository;
@@ -26,17 +30,15 @@ public class UserServiceTest {
     @InjectMocks
     UserServiceImpl userService;
 
-
     @Before
-    public void setUp() throws Exception {
-
+    public void setUp() {
+        user = new User();
         MockitoAnnotations.initMocks(this);
     }
 
     @Test
     public void create_shouldCreateUser_whenValidUserDetailsAreSent() {
-        when(userRepository.create(any(User.class))).thenReturn(new User());
-        User user = new User();
+        when(userRepository.createUser(any(User.class))).thenReturn(new User());
         assertThat(userService.createUser(user), is(notNullValue()));
     }
 
@@ -44,7 +46,7 @@ public class UserServiceTest {
     @Test
     public void create_returnsNewUserWithId() {
 
-        when(userRepository.create(any(User.class))).thenAnswer( new Answer<User>() {
+        when(userRepository.createUser(any(User.class))).thenAnswer(new Answer<User>() {
 
             @Override
             public User answer(InvocationOnMock invocation) {
@@ -59,10 +61,21 @@ public class UserServiceTest {
             }
         });
 
-        User user = new User();
-
         assertThat(userService.createUser(user), is(notNullValue()));
         assertEquals("test@gmail.com",user.getUserID());
     }
+
+    //Throwing an exception from the mocked method
+    @Test(expected = RuntimeException.class)
+    public void testAddCustomer_throwsException() {
+        when(userRepository.createUser(any(User.class))).thenThrow(RuntimeException.class);
+         userService.createUser(user);
+    }
+
+    @Test
+    public void deleteUser_shouldDeleteUser()
+    {
+    }
+
 }
 

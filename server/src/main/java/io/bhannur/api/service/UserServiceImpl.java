@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
         if (existing != null) {
             throw new BadRequestException("User with this email already exists");
         }
-        return repository.create(user);
+        return repository.createUser(user);
     }
 
     @Override
@@ -54,11 +54,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public void delete(String id) {
+    public void deleteUser(String id) {
         User existing = repository.findOne(id);
         if (existing == null) {
             throw new EntityNotFoundException("User not found");
         }
-        repository.delete(existing);
+        repository.deleteUser(existing);
     }
 }

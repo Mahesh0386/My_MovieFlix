@@ -6,17 +6,17 @@ import java.util.List;
 
 public interface UserRepository {
 
-    public List<User> findAll();
+     List<User> findAll();
 
-    public User findOne(String id);
+     User findOne(String id);
 
-    public User findByEmail(String email);
+     User findByEmail(String email);
 
-    public User create(User user);
+     User createUser(User user);
 
-    public User update(User user);
+     User update(User user);
 
-    public void delete(User user);
+     void deleteUser(User user);
 
 
 }

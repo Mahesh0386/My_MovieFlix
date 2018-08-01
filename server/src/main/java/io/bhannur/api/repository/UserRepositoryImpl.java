@@ -39,7 +39,7 @@ import java.util.List;
         }
 
         @Override
-        public User create(User user) {
+        public User createUser(User user) {
             em.persist(user);
             return user;
         }
@@ -50,7 +50,7 @@ import java.util.List;
         }
 
         @Override
-        public void delete(User user) {
+        public void deleteUser(User user) {
             em.remove(user);
         }
     }
