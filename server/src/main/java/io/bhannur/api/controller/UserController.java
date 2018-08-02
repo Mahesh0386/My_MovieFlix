@@ -31,12 +31,15 @@ public class UserController {
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "{id}")
-    public User update(@PathVariable("id") String id, @RequestBody User user) {
+    public User update(@PathVariable("id") String id,
+                       @RequestBody User user) {
+
         return service.update(id, user);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "{id}")
     public void delete(@PathVariable("id") String id) {
+
         service.deleteUser(id);
     }
 

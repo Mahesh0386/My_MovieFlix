@@ -1,4 +1,4 @@
-package test.java.io.bhannur.api.serviceTest;
+package test.java.io.bhannur.api.service;
 
 import main.java.io.bhannur.api.entity.User;
 import main.java.io.bhannur.api.repository.UserRepositoryImpl;

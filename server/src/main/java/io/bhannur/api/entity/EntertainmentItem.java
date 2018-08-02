@@ -4,13 +4,35 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 
-import java.util.Date;
-
 @Entity
 @NamedQueries({
-        @NamedQuery(name = "Shows.findAll", query = "SELECT s FROM Shows s"),
+        @NamedQuery(name = "EntertainmentItem.findAll", query = "SELECT e FROM EntertainmentItem e"),
         })
-public class Shows {
+public class EntertainmentItem {
+
+
+    @Column(unique =true)
+    private String title;
+    private int year;
+    private String rated;
+    private String runtime;
+    private String genre;
+    private String director;
+    private String writer;
+    private String actors;
+    private String plot;
+    private String language;
+    private String country;
+    private String awards;
+    private String poster;
+    private int metaScore;
+    private double imdbRating;
+    private int imdbVotes;
+    @Id
+    private String imdbId;
+    private String type;
+    @DateTimeFormat
+    private String released;
 
     public String getTitle() {
         return title;
@@ -36,11 +58,11 @@ public class Shows {
         this.rated = rated;
     }
 
-    public Date getReleased() {
+    public String getReleased() {
         return released;
     }
 
-    public void setReleased(Date released) {
+    public void setReleased(String released) {
         this.released = released;
     }
 
@@ -148,12 +170,12 @@ public class Shows {
         this.imdbVotes = imdbVotes;
     }
 
-    public int getImdbID() {
-        return imdbID;
+    public String getImdbId() {
+        return imdbId;
     }
 
-    public void setImdbID(int imdbID) {
-        this.imdbID = imdbID;
+    public void setImdbId(String imdbId) {
+        this.imdbId = imdbId;
     }
 
     public String getType() {
@@ -164,27 +186,6 @@ public class Shows {
         this.type = type;
     }
 
-    @Column(unique =true)
-    private String title;
-    private int year;
-    private String rated;
-    private String runtime;
-    private String genre;
-    private String director;
-    private String writer;
-    private String actors;
-    private String plot;
-    private String language;
-    private String country;
-    private String awards;
-    private String poster;
-    private int metaScore;
-    private double imdbRating;
-    private int imdbVotes;
-    @Id
-    private int imdbID;
-    private String type;
-    @DateTimeFormat
-    private Date released;
+
 
 }
