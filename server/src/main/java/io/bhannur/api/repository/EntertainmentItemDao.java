@@ -12,4 +12,6 @@ public interface EntertainmentItemDao {
      EntertainmentItem updateItem(EntertainmentItem item);
 
      EntertainmentItem findOneItem(String id);
+
+     void deleteItem(EntertainmentItem existingItem);
 }

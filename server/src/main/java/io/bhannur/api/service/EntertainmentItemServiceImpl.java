@@ -40,7 +40,19 @@ public class EntertainmentItemServiceImpl implements EntertainmentItemService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public EntertainmentItem findOneItem(String id) {
         return entertainmentItemDao.findOneItem(id);
+    }
+
+    @Override
+    @Transactional
+    public void deleteItem(String id) {
+        EntertainmentItem existingItem = entertainmentItemDao.findOneItem(id);
+        if(existingItem == null)
+        {
+            throw new EntityNotFoundException("Entertainment Item not found");
+        }
+        entertainmentItemDao.deleteItem(existingItem);
     }
 }

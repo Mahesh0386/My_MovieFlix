@@ -12,4 +12,6 @@ public interface EntertainmentItemService {
     EntertainmentItem updateItem(String id, EntertainmentItem item);
 
     EntertainmentItem findOneItem(String id);
+
+    void deleteItem(String id);
 }

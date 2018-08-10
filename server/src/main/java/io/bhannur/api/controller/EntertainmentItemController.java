@@ -45,5 +45,11 @@ public class EntertainmentItemController {
         return entertainmentItemService.updateItem(id,item);
 
     }
+    @RequestMapping(method = RequestMethod.DELETE, value = "{id}")
+    public void deleteItem(@PathVariable("id") String id) {
+
+        entertainmentItemService.deleteItem(id);
+    }
+
 
 }

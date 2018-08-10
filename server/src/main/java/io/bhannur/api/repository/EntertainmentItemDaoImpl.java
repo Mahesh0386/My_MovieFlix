@@ -36,5 +36,10 @@ public class EntertainmentItemDaoImpl implements EntertainmentItemDao {
         return em.find(EntertainmentItem.class, id);
     }
 
+    @Override
+    public void deleteItem(EntertainmentItem entertainmentItem) {
+        em.remove(entertainmentItem);
+    }
+
 
 }
