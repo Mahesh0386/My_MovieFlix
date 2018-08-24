@@ -18,6 +18,7 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
+    private String role;
 
     public String getUserID() {
         return userID;
@@ -26,8 +27,6 @@ public class User {
     public void setUserID(String userID) {
         this.userID = userID;
     }
-
-
 
     public String getPassword() {
         return password;
@@ -62,4 +61,11 @@ public class User {
     }
 
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 }
