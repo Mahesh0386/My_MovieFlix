@@ -1,7 +1,7 @@
 
 # About MovieFlix
 
-This project is aimed at developing an application similar to NetFlix. 
+The MovieFlix project is aimed at developing an online applications for streaming Movies and Shows.
 
 # Requirements
 
