@@ -1,7 +1,9 @@
 package main.java.io.bhannur.api.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -11,9 +13,10 @@ import javax.persistence.*;
         @NamedQuery(name = "EntertainmentItem.findAll", query = "SELECT e FROM EntertainmentItem e"),
 
         })
-
-@Getter
-@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class EntertainmentItem {
 
     @Column(unique =true)

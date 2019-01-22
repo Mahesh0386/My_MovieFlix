@@ -1,7 +1,6 @@
 	package main.java.io.bhannur.api;
 
     import org.eclipse.persistence.config.PersistenceUnitProperties;
-    import java.util.Properties;
     import org.eclipse.persistence.logging.SessionLog;
     import org.springframework.context.annotation.Bean;
     import org.springframework.context.annotation.Configuration;
@@ -14,6 +13,7 @@
 
     import javax.persistence.EntityManagerFactory;
     import javax.sql.DataSource;
+    import java.util.Properties;
 
 
     @Configuration

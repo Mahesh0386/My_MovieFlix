@@ -1,7 +1,6 @@
 package main.java.io.bhannur.api.controller;
 
 import main.java.io.bhannur.api.entity.EntertainmentItem;
-import main.java.io.bhannur.api.exception.BadRequestException;
 import main.java.io.bhannur.api.exception.EntityNotFoundException;
 import main.java.io.bhannur.api.service.EntertainmentItemService;
 import org.springframework.beans.factory.annotation.Autowired;
