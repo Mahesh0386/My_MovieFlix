@@ -3,6 +3,7 @@ package main.java.io.bhannur.api.service;
 import main.java.io.bhannur.api.entity.User;
 import main.java.io.bhannur.api.exception.BadRequestException;
 import main.java.io.bhannur.api.exception.EntityNotFoundException;
+import main.java.io.bhannur.api.exception.UserApiExceptions;
 import main.java.io.bhannur.api.repository.UserRepository;
 import main.java.io.bhannur.api.utility.CommonConstants;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,13 +36,21 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public User createUser(User user) {
-        User existing = repository.findByEmail(user.getEmail());
-        if (existing != null) {
-            throw new BadRequestException("User with this email already exists");
+    public User createUser(User user) throws UserApiExceptions {
+        if (!checkEmail(user.getEmail())) {
+            throw new UserApiExceptions("Email not valid");
         }
-        user.setRole(CommonConstants.System.USER_ROLE);
-        return repository.createUser(user);
+            User existing = repository.findByEmail(user.getEmail());
+            if (existing != null) {
+                throw new BadRequestException("User with this email already exists");
+            }
+            user.setRole(CommonConstants.System.USER_ROLE);
+            return repository.createUser(user);
+
+    }
+
+    private boolean checkEmail(String email) {
+        return false;
     }
 
     @Override

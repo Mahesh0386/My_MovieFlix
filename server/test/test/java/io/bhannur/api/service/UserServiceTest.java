@@ -52,6 +52,7 @@ public class UserServiceTest {
         assertEquals("Test", userReturned.getFirstName());
         assertEquals("User", userReturned.getLastName());
         assertEquals("123", userReturned.getPassword());
+        assertEquals("123", userReturned.getPassword());
 
     }
 
