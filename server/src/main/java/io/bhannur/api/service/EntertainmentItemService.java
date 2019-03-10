@@ -1,6 +1,6 @@
-package main.java.io.bhannur.api.service;
+package io.bhannur.api.service;
 
-import main.java.io.bhannur.api.entity.EntertainmentItem;
+import io.bhannur.api.entity.EntertainmentItem;
 
 import java.util.List;
 

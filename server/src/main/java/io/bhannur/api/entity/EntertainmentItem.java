@@ -1,4 +1,4 @@
-package main.java.io.bhannur.api.entity;
+package io.bhannur.api.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,4 +1,4 @@
-package main.java.io.bhannur.api.utility;
+package io.bhannur.api.utility;
 
 public final class CommonConstants {
     /**

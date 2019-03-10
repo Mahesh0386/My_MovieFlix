@@ -1,9 +1,10 @@
-package main.java.io.bhannur.api.controller;
+package io.bhannur.api.controller;
 
 
-import main.java.io.bhannur.api.entity.User;
-import main.java.io.bhannur.api.exception.UserApiExceptions;
-import main.java.io.bhannur.api.service.UserService;
+import io.bhannur.api.entity.User;
+import io.bhannur.api.exception.BadRequestException;
+import io.bhannur.api.exception.UserApiExceptions;
+import io.bhannur.api.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,7 +28,7 @@ public class UserController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public User create(@RequestBody User user) throws UserApiExceptions {
+    public User create(@RequestBody User user) throws UserApiExceptions, BadRequestException {
         return service.createUser(user);
     }
 

@@ -1,6 +1,6 @@
-package main.java.io.bhannur.api.repository;
+package io.bhannur.api.repository;
 
-import main.java.io.bhannur.api.entity.User;
+import io.bhannur.api.entity.User;
 
 import java.util.List;
 

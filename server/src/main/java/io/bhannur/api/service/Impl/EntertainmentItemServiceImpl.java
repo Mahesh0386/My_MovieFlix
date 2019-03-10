@@ -1,8 +1,9 @@
-package main.java.io.bhannur.api.service;
+package io.bhannur.api.service.Impl;
 
-import main.java.io.bhannur.api.entity.EntertainmentItem;
-import main.java.io.bhannur.api.exception.EntityNotFoundException;
-import main.java.io.bhannur.api.repository.EntertainmentItemDao;
+import io.bhannur.api.entity.EntertainmentItem;
+import io.bhannur.api.exception.EntityNotFoundException;
+import io.bhannur.api.repository.EntertainmentItemDao;
+import io.bhannur.api.service.EntertainmentItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

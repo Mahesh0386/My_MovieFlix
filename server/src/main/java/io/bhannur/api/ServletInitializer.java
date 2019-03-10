@@ -1,4 +1,4 @@
-package main.java.io.bhannur.api;
+package io.bhannur.api;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -6,7 +6,7 @@ public class ServletInitializer extends AbstractAnnotationConfigDispatcherServle
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[] { APIConfig.class, JPAConfig.class };
+		return new Class[] { io.bhannur.api.APIConfig.class, JPAConfig.class };
 	}
 
 	@Override
