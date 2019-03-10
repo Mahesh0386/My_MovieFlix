@@ -1,4 +1,4 @@
-package main.java.io.bhannur.api.exception;
+package io.bhannur.api.exception;
 
 public class UserApiExceptions extends Exception{
 

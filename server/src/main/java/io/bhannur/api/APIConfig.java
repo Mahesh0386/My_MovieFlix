@@ -1,4 +1,4 @@
-package main.java.io.bhannur.api;
+package io.bhannur.api;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

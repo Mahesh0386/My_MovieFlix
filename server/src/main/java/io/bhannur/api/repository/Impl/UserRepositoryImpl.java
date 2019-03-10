@@ -1,6 +1,7 @@
-package main.java.io.bhannur.api.repository;
+package io.bhannur.api.repository.Impl;
 
-import main.java.io.bhannur.api.entity.User;
+import io.bhannur.api.entity.User;
+import io.bhannur.api.repository.UserRepository;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

@@ -1,4 +1,4 @@
-	package main.java.io.bhannur.api;
+	package io.bhannur.api;
 
     import org.eclipse.persistence.config.PersistenceUnitProperties;
     import org.eclipse.persistence.logging.SessionLog;
@@ -24,7 +24,7 @@
         public LocalContainerEntityManagerFactoryBean createEmf() {
             LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
             emf.setJpaVendorAdapter(new EclipseLinkJpaVendorAdapter());
-            emf.setPackagesToScan("main.java.io.bhannur.api.entity");
+            emf.setPackagesToScan("io.bhannur.api.entity");
             emf.setDataSource(dataSource());
             emf.setJpaProperties(jpaProperties());
             return emf;
@@ -38,7 +38,7 @@
             /*ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
             ds.setUrl("jdbc:mysql://localhost:3306/example-db?useSSL=false");*/
             ds.setUsername("root");
-            ds.setPassword("Denso@963");
+            ds.setPassword("password");
             return ds;
         }
 

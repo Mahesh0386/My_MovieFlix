@@ -1,7 +1,7 @@
 package io.bhannur.api.repository;
 
 import lombok.RequiredArgsConstructor;
-import main.java.io.bhannur.api.repository.UserRepository;
+import io.bhannur.api.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;
