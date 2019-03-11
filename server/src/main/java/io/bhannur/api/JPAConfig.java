@@ -38,7 +38,7 @@
             /*ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
             ds.setUrl("jdbc:mysql://localhost:3306/example-db?useSSL=false");*/
             ds.setUsername("root");
-            ds.setPassword("password");
+            ds.setPassword("Denso@963");
             return ds;
         }
 
