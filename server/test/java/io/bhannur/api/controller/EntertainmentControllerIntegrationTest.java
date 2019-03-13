@@ -13,27 +13,20 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import javax.annotation.Resource;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8;
-import static org.springframework.http.RequestEntity.post;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -80,10 +73,8 @@ public class EntertainmentControllerIntegrationTest {
     public void deleteItem_deletesSuccessfully_withStatusOk() throws Exception {
         EntertainmentItem sample = EntertainmentItem.builder().imdbId("121").title("Test Movie").build();
         entertainmentItemService.createItem(sample);
-        MvcResult result =this.mockMvc.perform(delete("/entItem/121"))
-                .andExpect(status().isOk())
-                .andReturn();
-        assertEquals("", result.getResponse().getContentAsString());
+        this.mockMvc.perform(delete("/entItem/121"))
+                .andExpect(status().isOk());
     }
 
     @Test
@@ -95,17 +86,16 @@ public class EntertainmentControllerIntegrationTest {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
         ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
-        String requestJson =ow.writeValueAsString(sample );
+        String requestJson = ow.writeValueAsString(sample);
 
 
-        MvcResult result= mockMvc.perform(put("/entItem/111").contentType(APPLICATION_JSON_UTF8)
+        MvcResult result = mockMvc.perform(put("/entItem/111").contentType(APPLICATION_JSON_UTF8)
                 .content(requestJson))
                 .andExpect(status().isOk())
                 .andReturn();
 
         assertTrue(result.getResponse().getContentAsString().contains("USA"));
         entertainmentItemService.deleteItem("111");
-
     }
 
 }

@@ -1,7 +1,7 @@
 package io.bhannur.api.repository.Impl;
 
 import io.bhannur.api.entity.EntertainmentItem;
-import io.bhannur.api.repository.EntertainmentItemDao;
+import io.bhannur.api.repository.EntertainmentItemRepository;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -10,7 +10,7 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Repository
-public class EntertainmentItemDaoImpl implements EntertainmentItemDao {
+public class EntertainmentItemRepositoryImpl implements EntertainmentItemRepository {
 
     @PersistenceContext
     private EntityManager em;
