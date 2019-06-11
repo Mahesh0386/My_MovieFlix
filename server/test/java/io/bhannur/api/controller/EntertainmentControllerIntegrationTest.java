@@ -56,17 +56,17 @@ public class EntertainmentControllerIntegrationTest {
                 .andReturn();
         JSONArray responseArray = new JSONArray(result.getResponse().getContentAsString());
         JSONObject actual = (JSONObject) responseArray.get(0);
-        assertEquals("The Godfather", actual.get("title"));
+        assertEquals("The Godfather X", actual.get("title"));
     }
 
     @Test
     public void getByID_returnsOneMovie_withStatusOk() throws Exception {
-        MvcResult result = this.mockMvc.perform(get("/entItem/tt0068646"))
+        MvcResult result = this.mockMvc.perform(get("/entItem/tt006864655"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
                 .andReturn();
         JSONObject actual = new JSONObject(result.getResponse().getContentAsString());
-        assertEquals("The Godfather", actual.get("title"));
+        assertEquals("The Godfather X", actual.get("title"));
     }
 
     @Test
