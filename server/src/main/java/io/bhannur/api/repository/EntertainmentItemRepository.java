@@ -4,7 +4,7 @@ import io.bhannur.api.entity.EntertainmentItem;
 
 import java.util.List;
 
-public interface EntertainmentItemDao {
+public interface EntertainmentItemRepository {
      List<EntertainmentItem> findAll();
 
      EntertainmentItem createItem(EntertainmentItem item);

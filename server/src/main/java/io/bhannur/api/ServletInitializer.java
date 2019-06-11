@@ -16,6 +16,6 @@ public class ServletInitializer extends AbstractAnnotationConfigDispatcherServle
 
 	@Override
 	protected String[] getServletMappings() {
-		return new String[] { "/MovieFlix/api/*" };
+		return new String[] { "/movieflix-app/*" };
 	}
 }
